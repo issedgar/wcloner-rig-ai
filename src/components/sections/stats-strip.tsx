@@ -1,16 +1,16 @@
 import type { Stat } from "@/types/content";
 
 const STATS: Stat[] = [
-  { label: "Latency", value: "0ms", note: "No round-trip required" },
-  { label: "Privacy", value: "100%", note: "Air-gapped by design" },
-  { label: "Cost / Token", value: "$0", note: "Your GPU, your tokens" },
-  { label: "Uptime", value: "Local", note: "No dependency on cloud" },
+  { label: "Latencia", value: "0ms", note: "Sin viaje de ida y vuelta" },
+  { label: "Privacidad", value: "100%", note: "Aislado por diseño" },
+  { label: "Costo / Token", value: "$0", note: "Tu GPU, tus tokens" },
+  { label: "Disponibilidad", value: "Local", note: "Sin dependencia de la nube" },
 ];
 
 export function StatsStrip() {
   return (
-    <section className="border-y border-line/40">
-      <div className="rig-container grid divide-y divide-line/40 sm:grid-cols-2 sm:divide-x lg:grid-cols-4 lg:divide-y-0">
+    <section className="border-y border-line/70">
+      <div className="rig-container grid divide-y divide-line/70 sm:grid-cols-2 sm:divide-x lg:grid-cols-4 lg:divide-y-0">
         {STATS.map((s) => (
           <div key={s.label} className="px-6 py-8">
             <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-red">

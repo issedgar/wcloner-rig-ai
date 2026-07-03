@@ -35,7 +35,7 @@ function SeverStep() {
       <span className="dotted-v h-3 w-px" />
       <X size={16} className="text-red" />
       <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-red/80">
-        Severed
+        Cortado
       </span>
       <span className="dotted-v h-3 w-px" />
     </div>
@@ -51,36 +51,46 @@ export function WorkOffline() {
           <GlobeWire />
           <div className="relative flex flex-col items-center font-mono">
             <div className="border border-dashed border-line-dim px-6 py-3 text-[11px] uppercase tracking-[0.2em] text-paper/35">
-              Cloud Servers
+              Servidores en la nube
             </div>
             <SeverStep />
-            <div className="relative border border-line bg-ink px-8 py-4 text-center">
-              <span className="absolute -left-11 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-line/60 bg-ink text-red">
+            <div className="relative border border-line/80 bg-ink px-8 py-4 text-center">
+              <span className="absolute -left-11 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-line/80 bg-ink text-red">
                 <WifiOff size={15} />
               </span>
               <div className="text-[12px] font-semibold uppercase tracking-[0.15em] text-paper">
-                Your Machine
+                Tu equipo
               </div>
               <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-green">
-                ✓ Rig model active
+                ✓ Modelo ehc activo
               </div>
             </div>
             <SeverStep />
             <div className="border border-dashed border-line-dim px-6 py-3 text-[11px] uppercase tracking-[0.2em] text-paper/35">
-              Nothing Leaves
+              Nada sale
             </div>
           </div>
         </div>
 
         {/* copy */}
         <Reveal>
-          <BadgePill icon={<MonitorOff size={13} />}>Offline</BadgePill>
+          <BadgePill icon={<MonitorOff size={13} />}>Sin conexión</BadgePill>
           <h2 className="section-title mt-6 text-left text-[clamp(2.25rem,5vw,64px)]">
-            Work offline
+            Trabaja sin conexión
           </h2>
           <p className="mt-5 max-w-[440px] text-[17px] leading-relaxed text-paper/45">
-            Flights. Spotty Wi-Fi. Network outages. Nothing stops your flow.
+            Vuelos. Wi-Fi intermitente. Cortes de red. Nada detiene tu pensamiento.
           </p>
+          <div className="mt-7 flex flex-wrap gap-2.5">
+            {["Índice local", "2.418 notas", "Cifrado en reposo"].map((chip) => (
+              <span
+                key={chip}
+                className="chamfer border border-line/70 bg-paper/[0.03] px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-paper/55"
+              >
+                {chip}
+              </span>
+            ))}
+          </div>
         </Reveal>
       </div>
     </section>

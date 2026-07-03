@@ -11,26 +11,26 @@ const ICONS = [
 
 const BENEFITS: Benefit[] = [
   {
-    label: "Unlimited",
-    title: "Remove the meter",
-    body: "Refactor the whole codebase. Riff on an idea all day. Run agent loops without thinking about cost.",
+    label: "Ilimitado",
+    title: "Quita el medidor",
+    body: "Reorganiza todo tu archivo. Explora una idea todo el día. Lanza búsquedas y síntesis sin pensar en el costo.",
   },
   {
-    label: "Privacy",
-    title: "Sever the connection",
-    body: "Your code, keystrokes, and files never leave your machine. Not anonymized. Not aggregated. Not sent.",
+    label: "Privacidad",
+    title: "Corta la conexión",
+    body: "Tus notas, apuntes y archivos nunca salen de tu equipo. Ni anonimizados. Ni agregados. Ni enviados.",
   },
   {
-    label: "Latency",
-    title: "Stop waiting",
-    body: "No round-trip to a data center. Inference happens on your machine, in single-digit milliseconds.",
+    label: "Latencia",
+    title: "Deja de esperar",
+    body: "Sin viaje de ida y vuelta a un centro de datos. La inferencia ocurre en tu equipo, en milisegundos.",
   },
 ];
 
 export function BenefitsStrip() {
   return (
-    <section className="border-t border-line/40 py-4">
-      <div className="rig-container grid divide-y divide-line/40 md:grid-cols-3 md:divide-x md:divide-y-0">
+    <section className="border-t border-line/70 py-4">
+      <div className="rig-container grid divide-y divide-line/70 md:grid-cols-3 md:divide-x md:divide-y-0">
         {BENEFITS.map((b, i) => (
           <Reveal key={b.label} delay={i * 90} className="px-2 py-10 text-center md:px-8">
             <div className="flex justify-center">

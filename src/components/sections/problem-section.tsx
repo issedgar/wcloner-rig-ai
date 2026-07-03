@@ -5,36 +5,36 @@ import type { ProblemCard } from "@/types/content";
 
 const CARDS: ProblemCard[] = [
   {
-    label: "Data Extraction",
+    label: "Extracción de datos",
     num: "001",
-    title: "They train on your code.",
-    body: "Every prompt. Every file. Every fix.\nIt flows through infrastructure you don't control — improving systems they want to use to replace you.",
+    title: "Entrenan con tus notas.",
+    body: "Cada apunte. Cada documento. Cada idea.\nFluye por una infraestructura que no controlas — mejorando sistemas que quieren usar para reemplazarte.",
   },
   {
-    label: "Artificial Scarcity",
+    label: "Escasez artificial",
     num: "002",
-    title: "They meter your ambition.",
-    body: "Slowdowns, overages, caps.\nRight when you're deep in a sprint, the meter decides you've had enough.",
+    title: "Miden tu memoria.",
+    body: "Ralentizaciones, sobrecostos, topes.\nJusto cuando estás en pleno flujo, el medidor decide que ya tuviste suficiente.",
   },
   {
-    label: "Silent Downgrades",
+    label: "Degradaciones silenciosas",
     num: "003",
-    title: "They change the model.",
-    body: "They silently downgrade to cheaper models during peak load. Full price, degraded experience.",
+    title: "Cambian el modelo.",
+    body: "Rebajan a modelos más baratos en horas pico. Precio completo, experiencia degradada.",
   },
   {
-    label: "Cloud Dependency",
+    label: "Dependencia de la nube",
     num: "004",
-    title: "They control your flow.",
-    body: "Every completion makes a round trip across the internet.\nThousands of tiny interruptions, every single day.",
+    title: "Controlan tu acceso.",
+    body: "Cada consulta hace un viaje de ida y vuelta por internet.\nMiles de pequeñas interrupciones, cada día.",
   },
 ];
 
 function RadarEye() {
   return (
-    <svg viewBox="0 0 400 400" className="h-auto w-full max-w-[380px] text-paper/25" fill="none">
+    <svg viewBox="0 0 400 400" className="radar-eye h-auto w-full max-w-[380px] text-paper" fill="none">
       {[40, 80, 120, 160].map((r) => (
-        <circle key={r} cx="200" cy="200" r={r} stroke="currentColor" strokeWidth="0.6" />
+        <circle key={r} className="radar-eye-grid" cx="200" cy="200" r={r} stroke="currentColor" strokeWidth="0.75" />
       ))}
       {/* crosshair corner ticks */}
       {[
@@ -47,14 +47,14 @@ function RadarEye() {
         [360, 360, 330, 360],
         [360, 360, 360, 330],
       ].map((l, i) => (
-        <line key={i} x1={l[0]} y1={l[1]} x2={l[2]} y2={l[3]} stroke="currentColor" strokeWidth="0.8" />
+        <line key={i} className="radar-eye-frame" x1={l[0]} y1={l[1]} x2={l[2]} y2={l[3]} stroke="currentColor" strokeWidth="1" />
       ))}
       {/* scan dots */}
-      <circle cx="245" cy="130" r="2" fill="currentColor" />
-      <circle cx="120" cy="250" r="2.5" fill="currentColor" />
-      <circle cx="300" cy="280" r="1.6" fill="currentColor" />
+      <circle className="radar-eye-dot" cx="245" cy="130" r="2.2" fill="currentColor" />
+      <circle className="radar-eye-dot" cx="120" cy="250" r="2.7" fill="currentColor" />
+      <circle className="radar-eye-dot" cx="300" cy="280" r="1.8" fill="currentColor" />
       {/* eye almond */}
-      <path d="M120 200 Q200 150 280 200 Q200 250 120 200 Z" stroke="currentColor" strokeWidth="1" />
+      <path className="radar-eye-shape" d="M120 200 Q200 150 280 200 Q200 250 120 200 Z" stroke="currentColor" strokeWidth="1.2" />
       {/* pupil */}
       <circle cx="200" cy="200" r="14" className="text-red" fill="currentColor" />
     </svg>
@@ -80,31 +80,31 @@ export function ProblemSection() {
     <section className="signal-section relative overflow-hidden py-24">
       <div className="rig-container">
         <div className="flex justify-center">
-          <BadgePill icon={<X size={13} />}>The Problem</BadgePill>
+          <BadgePill icon={<X size={13} />}>El problema</BadgePill>
         </div>
 
         <Reveal className="mt-12">
           <h2 className="scanlines display-hero text-[clamp(2.5rem,6.6vw,80px)] text-paper">
-            You don&apos;t own your AI.
+            No eres dueño de tu IA.
             <br />
-            And you&apos;re being watched.
+            Y te están observando.
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-px border border-line/60 md:grid-cols-[minmax(0,0.85fr)_minmax(0,2fr)]">
+        <div className="mt-16 grid gap-px border border-line/80 md:grid-cols-[minmax(0,0.85fr)_minmax(0,2fr)]">
           <div className="relative flex items-center justify-center bg-ink p-10">
             <RadarEye />
             <span className="absolute bottom-5 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.2em] text-paper/25">
-              Monitoring Active
+              Monitoreo activo
             </span>
           </div>
 
-          <div className="grid bg-line/60 sm:grid-cols-2">
+          <div className="grid gap-px bg-line/20 sm:grid-cols-2">
             {CARDS.map((card, i) => (
               <Reveal
                 key={card.num}
                 delay={i * 80}
-                className="flex flex-col gap-3 bg-ink p-8"
+                className="flex flex-col gap-3 border border-line/70 bg-ink p-8"
               >
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-red">

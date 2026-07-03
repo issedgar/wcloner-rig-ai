@@ -9,51 +9,51 @@ import type { FaqItem } from "@/types/content";
 const ITEMS: FaqItem[] = [
   {
     num: "01",
-    question: "What is Rig?",
+    question: "¿Qué es ehc?",
     answer:
-      "Rig is a local-first AI coding assistant that runs entirely on your machine. It uses a modified open-source model post-trained exclusively for code, executed by a custom Rust inference engine optimized for Apple Silicon. Rig delivers fast and low latency agentic coding, requires no API calls, has no usage caps, collects zero telemetry, and costs $0 per token. All code and files stay on your machine. Rig currently supports macOS with Linux and Windows support planned.",
+      "ehc es un segundo cerebro con IA local-first que corre entero en tu máquina. Usa un modelo de código abierto modificado, post-entrenado para trabajar con tu conocimiento, ejecutado por un motor de inferencia propio en Rust optimizado para Apple Silicon. ehc ofrece búsqueda y síntesis ágil y de baja latencia, sin llamadas a API, sin topes de uso, con cero telemetría y a $0 por token. Todas tus notas y archivos se quedan en tu equipo. Hoy funciona en macOS, con Linux y Windows en camino.",
   },
   {
     num: "02",
-    question: "What Model does Rig use?",
+    question: "¿Qué modelo usa ehc?",
     answer:
-      "Rig uses a customized open source model. We modified it to work exclusively with the Rig agent harness, context engine, and tools. This allows us to shrink the model's total footprint without losing intelligence or coding capability.",
+      "ehc usa un modelo de código abierto personalizado. Lo modificamos para trabajar en exclusiva con el agente, el motor de contexto y las herramientas de ehc. Eso nos permite reducir el tamaño total del modelo sin perder inteligencia ni capacidad.",
   },
   {
     num: "03",
-    question: "What are the Hardware Requirements?",
+    question: "¿Cuáles son los requisitos de hardware?",
     answer:
-      "Rig is currently optimized to run on Apple Silicon devices using M2 or later with at least 32GB of RAM. We hope to continue optimizing to reduce the memory requirements and one day work well with only 16GB of RAM. Support for Window and Linux are coming soon.",
+      "Hoy ehc está optimizado para dispositivos Apple Silicon con M2 o superior y al menos 32 GB de RAM. Seguimos optimizando para reducir el requisito de memoria y algún día funcionar bien con solo 16 GB. Soporte para Windows y Linux muy pronto.",
   },
   {
     num: "04",
-    question: "How Does Rig Compare to Large Cloud Models?",
+    question: "¿Cómo se compara ehc con los grandes modelos en la nube?",
     answer:
-      "Rig's model is still in development so we do not have benchmarks available yet. Our early tests indicate the Rig model will be on par with state of the art models thanks to the combination of our context engine and post training pipeline.",
+      "El modelo de ehc sigue en desarrollo, así que aún no tenemos benchmarks. Nuestras pruebas tempranas indican que estará a la altura de los modelos de última generación gracias a la combinación de nuestro motor de contexto y el pipeline de post-entrenamiento.",
   },
   {
     num: "05",
-    question: "Can Rig Search the Web?",
+    question: "¿ehc puede buscar en la web?",
     answer:
-      "Yes, Rig has all the same tools you'd expect from a coding agent, including web search, file read / write, plan mode, and more.",
+      "Sí. ehc tiene todas las herramientas que esperas de un agente, incluida búsqueda web, lectura y escritura de archivos, modo plan y más.",
   },
   {
     num: "06",
-    question: "How will Rig be Priced?",
+    question: "¿Cómo se cobrará ehc?",
     answer:
-      "Rig's pricing model is planned to be a flat monthly or annual subscription on par with other coding agents but completely unlimited and offline.",
+      "El modelo de precios planeado es una suscripción mensual o anual plana, a la par de otros agentes, pero completamente ilimitada y offline.",
   },
   {
     num: "07",
-    question: "Will Rig Collect my Data?",
+    question: "¿ehc recopilará mis datos?",
     answer:
-      "No, Rig is committed to being the most secure and private coding agent available. Our telemetry will be limited to a license check with a grace period. Your code and conversations will never leave your machine.",
+      "No. ehc se compromete a ser el asistente más seguro y privado disponible. Nuestra telemetría se limitará a una verificación de licencia con periodo de gracia. Tus notas y conversaciones nunca saldrán de tu equipo.",
   },
   {
     num: "08",
-    question: "When Will Rig be Available?",
+    question: "¿Cuándo estará disponible ehc?",
     answer:
-      "We are rolling out closed beta access now. Keep an eye on your email for an invite to the test builds and slack community. Wider release is planned for Q3 2026. We're focused on creating the best possible coding assistant capable of supporting real software engineers on their most important projects.",
+      "Estamos abriendo acceso beta cerrado ahora. Revisa tu correo por una invitación a las builds de prueba y la comunidad. El lanzamiento amplio se planea para el Q3 2026. Nos enfocamos en crear el mejor asistente posible para acompañar tu conocimiento más importante.",
   },
 ];
 
@@ -66,15 +66,15 @@ export function Faq() {
         <div className="flex flex-col items-center text-center">
           <BadgePill icon={<HelpCircle size={13} />}>FAQ</BadgePill>
           <h2 className="section-title mt-8 text-[clamp(2.25rem,5.5vw,64px)]">
-            Frequently asked questions.
+            Preguntas frecuentes.
           </h2>
         </div>
 
-        <div className="mx-auto mt-14 max-w-[820px] border-t border-line/40">
+        <div className="mx-auto mt-14 max-w-[820px] border-t border-line/70">
           {ITEMS.map((item, i) => {
             const isOpen = open === i;
             return (
-              <div key={item.num} className="border-b border-line/40">
+              <div key={item.num} className="border-b border-line/70">
                 <button
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}

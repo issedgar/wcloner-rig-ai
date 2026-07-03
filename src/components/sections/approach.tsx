@@ -8,59 +8,59 @@ import type { ApproachPanel, ApproachStep } from "@/types/content";
 
 const STEPS: ApproachStep[] = [
   {
-    num: "Step 01",
-    title: "A focused model, trained specifically for coding.",
+    num: "Paso 01",
+    title: "Un modelo enfocado, entrenado para tu conocimiento.",
     body: [
-      "Every parameter in the model is dedicated to coding, planning, tool use, and structured edits. The entire training process is focused on engineering work.",
-      "By narrowing the domain, we concentrate intelligence where it matters — deeper reasoning, better code, sharper tool use.",
+      "Cada parámetro del modelo se dedica a organizar, conectar y razonar sobre tus notas. Todo el entrenamiento se enfoca en el trabajo del conocimiento.",
+      "Al acotar el dominio, concentramos la inteligencia donde importa — razonamiento más profundo, mejores conexiones, síntesis más aguda.",
     ],
   },
   {
-    num: "Step 02",
-    title: "Full intelligence, compressed to fit your machine.",
+    num: "Paso 02",
+    title: "Inteligencia completa, comprimida para tu equipo.",
     body: [
-      "The model is compressed to run efficiently on consumer machines — carefully preserving the reasoning patterns that matter most.",
-      "The result is an 8 GB model that fits comfortably in memory on a MacBook. Full reasoning. Local execution. Zero cost per token.",
+      "El modelo se comprime para correr con eficiencia en equipos de consumo — preservando con cuidado los patrones de razonamiento que más importan.",
+      "El resultado es un modelo de 8 GB que cabe cómodo en memoria en una MacBook. Razonamiento completo. Ejecución local. Cero costo por token.",
     ],
   },
   {
-    num: "Step 03",
-    title: "A custom runtime, engineered for Apple Silicon.",
+    num: "Paso 03",
+    title: "Un runtime a medida, diseñado para Apple Silicon.",
     body: [
-      "The model runs through a custom inference engine optimized specifically for Apple Silicon. Model, context engine, and tools are designed as a single coordinated system.",
-      "That tight integration is what makes local execution fast, reliable, and practical.",
+      "El modelo corre en un motor de inferencia propio optimizado específicamente para Apple Silicon. Modelo, motor de contexto y herramientas se diseñan como un solo sistema coordinado.",
+      "Esa integración estrecha es lo que hace la ejecución local rápida, fiable y práctica.",
     ],
   },
 ];
 
 const PANELS: ApproachPanel[] = [
   {
-    title: "Training Focus",
+    title: "Enfoque de entrenamiento",
     rows: [
-      { label: "Rig", bar: "████████████████████", value: "100%", tone: "green" },
-      { label: "Most AI models", bar: "███░░░░░░░░░░░░░░░░░", value: "~15–20%", tone: "dim" },
+      { label: "ehc", bar: "████████████████████", value: "100%", tone: "green" },
+      { label: "Otros modelos", bar: "███░░░░░░░░░░░░░░░░░", value: "~15–20%", tone: "dim" },
     ],
     note: [
-      "General-purpose models spread capacity across chat, translation, creative writing, and more.",
-      "Rig dedicates every parameter to engineering.",
+      "Los modelos de propósito general reparten su capacidad entre chat, traducción, escritura creativa y más.",
+      "ehc dedica cada parámetro a tu conocimiento.",
     ],
   },
   {
-    title: "Model size (memory required)",
+    title: "Tamaño del modelo (memoria)",
     rows: [
-      { label: "Cloud models", bar: "████████████████████", value: "200+ GB", tone: "dim" },
-      { label: "Open source", bar: "██████░░░░░░░░░░░░░░", value: "28–140 GB", tone: "dim" },
-      { label: "Rig", bar: "█░░░░░░░░░░░░░░░░░░░", value: "8 GB", tone: "green" },
+      { label: "Modelos en la nube", bar: "████████████████████", value: "200+ GB", tone: "dim" },
+      { label: "Código abierto", bar: "██████░░░░░░░░░░░░░░", value: "28–140 GB", tone: "dim" },
+      { label: "ehc", bar: "█░░░░░░░░░░░░░░░░░░░", value: "8 GB", tone: "green" },
     ],
-    note: ["Fits in 16 GB unified memory.", "Accuracy loss: <0.3%"],
+    note: ["Cabe en 16 GB de memoria unificada.", "Pérdida de precisión: <0.3%"],
   },
   {
-    title: "First token latency",
+    title: "Latencia del primer token",
     rows: [
-      { label: "Rig", bar: "█░░░░░░░░░░░░░░░░░░░", value: "300 ms", tone: "green" },
-      { label: "Cloud APIs", bar: "████████████████████", value: "400–1,000 ms", tone: "dim" },
+      { label: "ehc", bar: "█░░░░░░░░░░░░░░░░░░░", value: "300 ms", tone: "green" },
+      { label: "APIs en la nube", bar: "████████████████████", value: "400–1.000 ms", tone: "dim" },
     ],
-    note: ["Cost per 1K tokens", "Rig $0.00 · Cloud APIs $0.01–0.06"],
+    note: ["Costo por 1K tokens", "ehc $0.00 · APIs en la nube $0.01–0.06"],
   },
 ];
 
@@ -71,7 +71,7 @@ function Panel({ panel }: { panel: ApproachPanel }) {
       <div className="mt-6 space-y-2">
         {panel.rows.map((r) => (
           <div key={r.label} className="flex items-center gap-3 whitespace-nowrap">
-            <span className="w-28 shrink-0 text-paper/70">{r.label}</span>
+            <span className="w-36 shrink-0 text-paper/70">{r.label}</span>
             <span
               className={cn(
                 "tracking-[-1px]",
@@ -121,11 +121,13 @@ export function Approach() {
     <section className="relative overflow-hidden py-24">
       <div className="rig-container">
         <div className="flex flex-col items-center text-center">
-          <BadgePill icon={<ScanSearch size={13} />}>Our Approach</BadgePill>
-          <h2 className="section-title mt-8 text-[clamp(2.5rem,6vw,72px)]">Purpose beats scale.</h2>
+          <BadgePill icon={<ScanSearch size={13} />}>Nuestro enfoque</BadgePill>
+          <h2 className="section-title mt-8 text-[clamp(2.5rem,6vw,72px)]">
+            El propósito vence a la escala.
+          </h2>
           <p className="mt-5 max-w-[560px] text-[17px] leading-relaxed text-paper/45">
-            Rig is a closed system — model, context, tools, and inference —
-            engineered together for one job: real coding work.
+            ehc es un sistema cerrado — modelo, contexto, herramientas e
+            inferencia — diseñados juntos para un solo trabajo: tu conocimiento.
           </p>
         </div>
 
@@ -140,11 +142,11 @@ export function Approach() {
                   stepRefs.current[i] = el;
                 }}
                 className={cn(
-                  "border-t border-line/40 py-10 transition-opacity duration-500 first:border-t-0",
+                  "border-t border-line/70 py-10 transition-opacity duration-500 first:border-t-0",
                   active === i ? "opacity-100" : "opacity-35"
                 )}
               >
-                <div className="h-px w-full bg-line/30">
+                <div className="h-px w-full bg-line/60">
                   <div
                     className={cn(
                       "h-px bg-red transition-all duration-500",

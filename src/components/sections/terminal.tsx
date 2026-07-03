@@ -5,26 +5,26 @@ import { SlidersHorizontal } from "lucide-react";
 import { BadgePill } from "@/components/ui/badge-pill";
 import type { TerminalLabel } from "@/types/content";
 
-const RIG_ASCII = `██████╗  ██╗ ██████╗
-██╔══██╗ ██║ ██╔════╝
-██████╔╝ ██║ ██║  ███╗
-██╔══██╗ ██║ ██║   ██║
-██║  ██║ ██║ ╚██████║
-╚═╝  ╚═╝ ╚═╝  ╚═════╝`;
+const EHC_ASCII = `███████╗ ██╗  ██╗  ██████╗
+██╔════╝ ██║  ██║ ██╔════╝
+█████╗   ███████║ ██║
+██╔══╝   ██╔══██║ ██║
+███████╗ ██║  ██║ ╚██████╗
+╚══════╝ ╚═╝  ╚═╝  ╚═════╝`;
 
 const LEFT: TerminalLabel[] = [
-  { title: "Custom Model", sub: "Optimized for consumer hardware" },
-  { title: "Inference", sub: "Cross-OS using Rust" },
-  { title: "Context Graph", sub: "Repo-wide code understanding" },
+  { title: "Modelo propio", sub: "Optimizado para hardware de consumo" },
+  { title: "Inferencia", sub: "Multiplataforma con Rust" },
+  { title: "Grafo de contexto", sub: "Comprende todas tus notas" },
 ];
 
 const RIGHT: TerminalLabel[] = [
-  { title: "Terminal UI", sub: "Built in Rust and blazing fast" },
-  { title: "Heavily Tuned", sub: "Consistent tool calls and plan use" },
-  { title: "Opinionated", sub: "Focused on code correctness" },
+  { title: "Interfaz de terminal", sub: "Hecha en Rust y ultrarrápida" },
+  { title: "Muy afinado", sub: "Llamadas a herramientas consistentes" },
+  { title: "Con criterio", sub: "Enfocado en la precisión" },
 ];
 
-const TYPE = "refactor auth middleware";
+const TYPE = "conecta ideas sobre privacidad";
 
 function useTypewriter(text: string) {
   const [n, setN] = useState(0);
@@ -51,7 +51,7 @@ function SideLabels({ items, side }: { items: TerminalLabel[]; side: "left" | "r
           className={`flex items-center gap-3 ${side === "left" ? "flex-row-reverse text-right" : "text-left"}`}
         >
           <span className="size-1.5 shrink-0 rounded-full bg-line" />
-          <span className={`h-px w-10 shrink-0 ${side === "left" ? "dotted-h-green opacity-40" : "dotted-h-green opacity-40"}`} />
+          <span className="dotted-h-green h-px w-10 shrink-0 opacity-40" />
           <div>
             <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-paper/80">
               {it.title}
@@ -73,9 +73,9 @@ export function Terminal() {
     <section className="grid-bg relative overflow-hidden py-24">
       <div className="rig-container">
         <div className="flex flex-col items-center text-center">
-          <BadgePill icon={<SlidersHorizontal size={13} />}>Engineered Intelligence</BadgePill>
+          <BadgePill icon={<SlidersHorizontal size={13} />}>Inteligencia diseñada</BadgePill>
           <h2 className="section-title mt-8 text-[clamp(2.5rem,6vw,72px)]">
-            Built for control freaks
+            Hecho para obsesivos del control
           </h2>
         </div>
 
@@ -83,37 +83,37 @@ export function Terminal() {
           <SideLabels items={LEFT} side="left" />
 
           {/* terminal window */}
-          <div className="chamfer mx-auto w-full max-w-[620px] border border-line/50 bg-[#0d0d0d] shadow-2xl">
-            <div className="flex items-center justify-between border-b border-line/40 px-4 py-3">
+          <div className="chamfer mx-auto w-full max-w-[620px] border border-line/70 bg-[#0d0d0d] shadow-2xl">
+            <div className="flex items-center justify-between border-b border-line/70 px-4 py-3">
               <div className="flex gap-2">
-                {["#3a3a3a", "#3a3a3a", "#3a3a3a"].map((c, i) => (
-                  <span key={i} className="size-2.5 rounded-full" style={{ background: c }} />
+                {[0, 1, 2].map((i) => (
+                  <span key={i} className="size-2.5 rounded-full" style={{ background: "#3a3a3a" }} />
                 ))}
               </div>
               <span className="font-mono text-[11px] tracking-[0.15em] text-paper/40">
-                RIG://LOCALHOST · OFFLINE
+                ehc://localhost · OFFLINE
               </span>
               <span className="size-2 rounded-full bg-red" />
             </div>
 
             <div className="px-6 py-6 font-mono text-[13px] leading-relaxed">
               <div className="text-paper/85">
-                <span className="text-red">λ</span> rig init
+                <span className="text-red">λ</span> ehc init
               </div>
               <pre className="my-4 select-none text-[9px] leading-[1.1] text-paper/25 sm:text-[11px]">
-                {RIG_ASCII}
+                {EHC_ASCII}
               </pre>
               <div className="space-y-1 text-paper/50">
-                <div>&gt; Scanning hardware...</div>
-                <div>&gt; Found M4 · 16GB RAM</div>
+                <div>&gt; Escaneando hardware...</div>
+                <div>&gt; Detectado M4 · 16GB RAM</div>
                 <div>
-                  &gt; Loading RIG Model <span className="text-red">OK</span>
+                  &gt; Cargando modelo ehc <span className="text-red">OK</span>
                 </div>
-                <div>&gt; Indexing 2,418 files · 87,102 symbols</div>
+                <div>&gt; Indexando 2.418 notas · 87.102 conceptos</div>
               </div>
               <div className="mt-4 text-paper/85">
-                <span className="text-green">✓</span> Ready. Network:{" "}
-                <span className="text-red">OFF</span> · Telemetry:{" "}
+                <span className="text-green">✓</span> Listo. Red:{" "}
+                <span className="text-red">OFF</span> · Telemetría:{" "}
                 <span className="text-red">OFF</span>
               </div>
               <div className="mt-4 text-paper/85">
